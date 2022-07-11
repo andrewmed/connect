@@ -84,7 +84,7 @@ func ConnectState(ctx context.Context, state *synchronization.State, pwd string)
 		Auth: []ssh.AuthMethod{
 			ssh.PublicKeysCallback(ag.Signers),
 		},
-		Timeout:         2 * time.Second,
+		Timeout:         10 * time.Second,
 		HostKeyCallback: ssh.InsecureIgnoreHostKey(),
 	}
 
