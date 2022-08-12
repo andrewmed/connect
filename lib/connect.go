@@ -47,7 +47,7 @@ func MatchingState(ctx context.Context, states []*synchronization.State, pwd str
 	var found *synchronization.State
 	var disconnected bool
 	for _, state := range states {
-		if strings.Contains(pwd, state.GetSession().Alpha.Path) {
+		if strings.Contains(pwd+"/", state.GetSession().Alpha.Path+"/") {
 			if state.Status == synchronization.Status_Disconnected {
 				disconnected = true
 				continue
